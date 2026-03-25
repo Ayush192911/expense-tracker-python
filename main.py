@@ -7,16 +7,16 @@ while True:
     print("====MENU====")
     print("1. Add Expense")
     print("2. View All Expenses")
-    print("3. View Total Khrcha")
+    print("3. View Total Expense")
     print("4. Exit")
 
     choice= int(input("Please Enter Your Choice : "))
 
 #ADD Expense
     if(choice == 1):
-        date= input("Kis date par khrcha kiya tha?: ")
-        category= input("Kis type ka khrcha kiya? (Food, Travel, Makeup, Books): ")
-        description= input("Aur detail dedo: ")
+        date= input("Date of expense:")
+        category= input("Type of Expense(Food, Travel, Makeup, Books): ")
+        description= input("More Details: ")
         amount= float(input("Enter the amount: "))
 
         expense= {
@@ -32,25 +32,25 @@ while True:
 # 2. VIEW ALL EXPENSES 
     elif(choice == 2):
         if( len(expensesList)==0 ):
-            print("No Expenses Added. Jao pehle khrcha karo. ")
+            print("No Expenses Added. Go and spend some money. ")
         else:
-           print("===== Ye y apka sara expense ======")
+           print("===== Your total expense ======")
            count= 1
-           for eachKharcha in expensesList:
-                print(f"Kharcha Number {count} -> {eachKharcha["date"]}, {eachKharcha["category"]}, {eachKharcha["description"]}, {eachKharcha["amount"]} ")
+           for eachexpense in expensesList:
+                print(f"Expense Number {count} -> {eachexpense["date"]}, {eachexpense["category"]}, {eachexpense["description"]}, {eachexpense["amount"]} ")
                 count= count+1
 
 # 3. View TOtal Spending 
     elif(choice == 3):
         total= 0
-        for eachKrcha in expensesList:
-            total = total + eachKrcha["amount"]
+        for eachexpense in expensesList:
+            total = total + eachexpense["amount"]
 
-        print("\n TOTAL KHRCHA = ", total)
+        print("\n TOTAL EXPENSE = ", total)
 
 #4. EXIT 
     elif(choice == 4):
-        print("Dhanyawad aaapne humara system use kiya")
+        print("Thankyou")
         break
 
     else:
